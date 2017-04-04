@@ -1,13 +1,24 @@
-// Find the maximum
-function maxOfTwoNumbers (first, second) {
-
+function maxOfTwoNumbers(first, second){
+  // Your Code Here
+  if(first<=second)
+    return second;
+  else
+    return first;
 }
 
 var largest = maxOfTwoNumbers(2, 6);
 console.log(largest);
+// 6
 
 // Finding Longest Word
 function findLongestWord (words) {
+  var longitude = 0 ;
+
+  for(var i=0; i<words.length; i++)
+    if(longitude<words[i].length)
+      longitude=words[i].length;
+
+  return longitude;
 
 }
 
@@ -23,9 +34,14 @@ var words = [
 var longest = findLongestWord(words);
 console.log(longest);
 
+
+
 // Calculating a Sum
 function sumArray (array) {
-
+  var suma = 0;
+  for(var i=0; i<array.length; i++)
+    suma += array[i];
+  return suma;
 }
 
 var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
@@ -34,7 +50,7 @@ console.log(total);
 
 // Calculate the Average
 function averageNumbers (array) {
-
+  return sumArray(array)/array.length;
 }
 
 var numbers = [2, 6, 9, 10, 7, 4, 1, 9];
@@ -43,7 +59,10 @@ console.log(average);
 
 // Array of Strings
 function averageWordLength (array) {
-
+  var result = 0;
+  for (var i=0; i<array.length; i++)
+    result += array[i].length;
+  return result/array.length;
 }
 
 var words = [
@@ -62,8 +81,24 @@ var averageLength = averageWordLength(words);
 console.log(averageLength);
 
 // Unique Arrays
-function uniquifyArray (array) {
+function uniquifyArray1 (array) {
+  for (var i=0; i<array.length; i++)
+    for(var j=i+1; j<array.length; j++)
+      if (array[i]==array[j])
+        array.splice(j,1);
+  return array
+}
 
+function removeRepeated() {
+
+}
+
+function uniquifyArray2 (array) {
+  for (var i=0; i<array.length; i++)
+    for(var j=i+1; j<array.length; j++)
+      if (array[i]==array[j])
+        array.splice(j,1);
+  return array
 }
 
 var words = [
@@ -79,9 +114,10 @@ var words = [
   "simple",
   "bring"
 ];
-var uniqued = uniquifyArray(words);
+var uniqued = uniquifyArray2(words);
 console.log(uniqued);
 
+words.indexOf("playground");
 // Finding Elements
 function doesWordExist (wordsArray, word) {
 
