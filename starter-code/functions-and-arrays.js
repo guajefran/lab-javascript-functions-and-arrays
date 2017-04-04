@@ -81,24 +81,12 @@ var averageLength = averageWordLength(words);
 console.log(averageLength);
 
 // Unique Arrays
-function uniquifyArray1 (array) {
+function uniquifyArray(array) {
   for (var i=0; i<array.length; i++)
     for(var j=i+1; j<array.length; j++)
       if (array[i]==array[j])
         array.splice(j,1);
-  return array
-}
-
-function removeRepeated() {
-
-}
-
-function uniquifyArray2 (array) {
-  for (var i=0; i<array.length; i++)
-    for(var j=i+1; j<array.length; j++)
-      if (array[i]==array[j])
-        array.splice(j,1);
-  return array
+  return array;
 }
 
 var words = [
@@ -114,7 +102,7 @@ var words = [
   "simple",
   "bring"
 ];
-var uniqued = uniquifyArray2(words);
+var uniqued = uniquifyArray(words);
 console.log(uniqued);
 
 words.indexOf("playground");
